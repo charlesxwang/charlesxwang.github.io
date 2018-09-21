@@ -14,17 +14,37 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <html>
 <head>
-    <title>Docson widget example</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/docson.css">
+    <style>
+        body {
+            font-family: verdana, helvetica;
+        }
+
+        #form {
+            display: none;
+        }
+
+        #form input[type=text] {
+            border-radius: 6px;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+        }
+
+        .embedded {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
 </head>
-<body style="background: cornsilk">
-    <div style="font-family: 'Helvetica'">
-        <div>
-    Hello
-    <script src="../public/js/widget.js" data-schema="https://charlesxwang.github.io/examples/new-BIM.schema.json"></script>
-    World</div>
-    </div>
+<body>
+<div id="form">
+    Please enter a schema URL:
+    <input type="text" id="url" size="60">
+</div>
+<div id="doc"></div>
+<script src="./js/webpage.js"></script>
 </body>
 </html>
