@@ -1,0 +1,231 @@
+{
+	"GeneralInformation": {
+		"name": "RCWall_BerteroS6",
+		"revision": 1,
+		"type": "ExperimentalTest",
+		"year": 2003,
+		"stories": 3,
+		"height": 120.0,
+		"volume": "$volume",
+		"area": 300.0,
+		"location": {
+			"name": "unknown",
+			"latitude": 37.916872,
+			"longitude": -122.329703
+		},
+		"units": {
+			"force": "kip",
+			"length": "in",
+			"time": "sec",
+			"temperature": "F"
+		},
+		"engineer": "Bertero",
+		"URL": null,
+		"DOI": null
+	},
+	"StructuralInformation": {
+		"type": "A1 - SpecialReinforcedConcreteShearWall",
+		"layout": {
+			"floors": [
+				{
+					"name": "0",
+					"elevation": 0.0
+				},
+				{
+					"name": "1",
+					"elevation": 40.0
+				},
+				{
+					"name": "2",
+					"elevation": 80.0
+				},
+				{
+					"name": "3",
+					"elevation": 120.0
+				}
+			],
+			"clines": [
+				{
+					"name": "1",
+					"location": [0.0,0.0]
+				},
+				{
+					"name": "2",
+					"location": [94.96,0.0]
+				}
+			]
+		},
+		"properties": {
+			"materials": [
+				{
+					"name": "Concrete",
+					"type": "concrete",
+					"masspervolume": 8.60914e-05,
+					"fpc": 5.032632342,
+					"E": 4043.639756,
+					"nu": 0.2
+				},
+				{
+					"name": "Steel Web Vert",
+					"type": "steel rebar",
+					"masspervolume": 0.0002810502998,
+					"fy": 73.5315446,
+					"E": 29000.0,
+					"fu": 105.8738216,
+					"epsu": 0.12
+				},
+				{
+					"name": "Steel Web Horz",
+					"type": "steel rebar",
+					"masspervolume": 0.0002810502998,
+					"fy": 73.5315446,
+					"E": 29000.0,
+					"fu": 105.8738216,
+					"epsu": 0.017
+				},
+				{
+					"name": "Steel Web Shear",
+					"type": "steel rebar",
+					"masspervolume": 0.0002810502998,
+					"fy": 0.0,
+					"E": 29000.0,
+					"fu": 0.0
+				},
+				{
+					"name": "Steel BE Vert",
+					"type": "steel rebar",
+					"masspervolume": 0.0002810502998,
+					"fy": 69.90572879,
+					"E": 29000.0,
+					"fu": 99.63741842,
+					"epsu": 0.148,
+					"epsr": 0.01088445878
+				},
+				{
+					"name": "Steel BE Conf",
+					"type": "steel rebar",
+					"masspervolume": 0.0002810502998,
+					"fy": 63.81435823,
+					"E": 29000.0,
+					"fu": 69.47063089
+				}
+			],
+			"framesections": [],
+			"slabsections": [],
+			"decksections": [],
+			"wallsections": [
+				{
+					"name": "Wall",
+					"material": "Concrete",
+					"type": "concrete rectangular wall",
+					"length": 94.96,
+					"thickness": 4.488,
+					"boundaryElementLength": 10.984,
+					"longitudinalRebar": {
+						"material": "Steel Web Vert",
+						"numBarsThickness": 2,
+						"barArea": 0.04908738521,
+						"spacing": 4.0,
+						"cover": 0.25
+					},
+					"transverseRebar": {
+						"material": "Steel Web Horz",
+						"numBarsThickness": 2,
+						"barArea": 0.04908738521,
+						"spacing": 4.0,
+						"cover": 0.25
+					},
+					"longitudinalBoundaryElementRebar": {
+						"material": "Steel BE Vert",
+						"numBarsLength": 4,
+						"numBarsThickness": 2,
+						"barArea": 0.3097484693,
+						"cover": 0.25
+					},
+					"transverseBoundaryElementRebar": {
+						"material": "Steel BE Conf",
+						"numBarsLength": 4,
+						"numBarsThickness": 2,
+						"barArea": 0.0163539454,
+						"spacing": 1.34
+					}
+				}
+			],
+			"connections": [],
+			"panelzones": [],
+			"links": [],
+			"points": []
+		},
+		"geometry": {
+			"columns": [],
+			"beams": [],
+			"braces": [],
+			"floors": [],
+			"walls": [
+				{
+					"name": "W1S1",
+					"cline": [
+						"1",
+						"2"
+					],
+					"floor": [
+						"0",
+						"1"
+					],
+					"segment": [
+						{
+							"section": "Wall",
+							"ratio": [0.0,1.0],
+							"angle": 0.0
+						}
+					]
+				},
+				{
+					"name": "W1S2",
+					"cline": [
+						"1",
+						"2"
+					],
+					"floor": [
+						"1",
+						"2"
+					],
+					"segment": [
+						{
+							"section": "Wall",
+							"ratio": [0.0,1.0],
+							"angle": 0.0
+						}
+					]
+				},
+				{
+					"name": "W1S3",
+					"cline": [
+						"1",
+						"2"
+					],
+					"floor": [
+						"2",
+						"3"
+					],
+					"segment": [
+						{
+							"section": "Wall",
+							"ratio": [0.0,1.0],
+							"angle": 0.0
+						}
+					]
+				}
+			],
+			"panelzones": [],
+			"links": [],
+			"points": []
+		}
+	},
+	"ExteriorInformation": {
+		"type": null
+	},
+	"ContentInformation": {
+		"type": null
+	}
+}
