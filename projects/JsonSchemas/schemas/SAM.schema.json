@@ -1,0 +1,362 @@
+ {
+   "definitions": {},
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "$id": "http://example.com/root.json",
+   "type": "object",
+   "title": "The Root Schema",
+   "required": [
+     "Structural Analysis Model"
+   ],
+   "properties": {
+     "Structural Analysis Model": {
+       "$id": "#/properties/Structural Analysis Model",
+       "type": "object",
+       "title": "The Structural analysis model Schema",
+       "required": [
+         "geometry",
+         "properties",
+         "nodeMapping"
+       ],
+       "properties": {
+         "geometry": {
+           "$id": "#/properties/Structural Analysis Model/properties/geometry",
+           "type": "object",
+           "title": "The Geometry Schema",
+           "required": [
+             "nodes",
+             "elements"
+           ],
+           "properties": {
+             "nodes": {
+               "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/nodes",
+               "type": "array",
+               "title": "The Nodes Schema",
+               "items": {
+                 "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/nodes/items",
+                 "type": "object",
+                 "title": "The Items Schema",
+                 "required": [
+                   "name",
+                   "ndf",
+                   "crd"
+                 ],
+                 "properties": {
+                   "name": {
+                     "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/nodes/items/properties/name",
+                     "type": "integer",
+                     "title": "The Name Schema",
+                     "default": 0,
+                     "examples": [
+                       1
+                     ]
+                   },
+                   "ndf": {
+                     "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/nodes/items/properties/ndf",
+                     "type": "integer",
+                     "title": "The Ndf Schema",
+                     "default": 0,
+                     "examples": [
+                       2
+                     ]
+                   },
+                   "crd": {
+                     "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/nodes/items/properties/crd",
+                     "type": "array",
+                     "title": "The Crd Schema",
+                     "items": {
+                       "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/nodes/items/properties/crd/items",
+                       "type": "number",
+                       "title": "The Items Schema",
+                       "default": 0,
+                       "examples": [
+                         0,
+                         0
+                       ]
+                     }
+                   }
+                 }
+               }
+             },
+             "elements": {
+               "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/elements",
+               "type": "array",
+               "title": "The Elements Schema",
+               "items": {
+                 "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/elements/items",
+                 "type": "object",
+                 "title": "The Items Schema",
+                 "required": [
+                   "name",
+                   "type",
+                   "nodes",
+                   "material"
+                 ],
+                 "properties": {
+                   "name": {
+                     "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/elements/items/properties/name",
+                     "type": "integer",
+                     "title": "The Name Schema",
+                     "default": 0,
+                     "examples": [
+                       0
+                     ]
+                   },
+                   "type": {
+                     "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/elements/items/properties/type",
+                     "type": "string",
+                     "title": "The Type Schema",
+                     "default": "",
+                     "examples": [
+                       "FourNodeQuad"
+                     ],
+                     "pattern": "^(.*)$"
+                   },
+                   "nodes": {
+                     "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/elements/items/properties/nodes",
+                     "type": "array",
+                     "title": "The Nodes Schema",
+                     "items": {
+                       "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/elements/items/properties/nodes/items",
+                       "type": "integer",
+                       "title": "The Items Schema",
+                       "default": 0,
+                       "examples": [
+                         1,
+                         2,
+                         3,
+                         4
+                       ]
+                     }
+                   },
+                   "material": {
+                     "$id": "#/properties/Structural Analysis Model/properties/geometry/properties/elements/items/properties/material",
+                     "type": "integer",
+                     "title": "The Material Schema",
+                     "default": 0,
+                     "examples": [
+                       7
+                     ]
+                   }
+                 }
+               }
+             }
+           }
+         },
+         "properties": {
+           "$id": "#/properties/Structural Analysis Model/properties/properties",
+           "type": "object",
+           "title": "The Properties Schema",
+           "required": [
+             "uniaxialMaterials",
+             "ndMaterials",
+             "sections",
+             "crdTransformations"
+           ],
+           "properties": {
+             "uniaxialMaterials": {
+               "$id": "#/properties/Structural Analysis Model/properties/properties/properties/uniaxialMaterials",
+               "type": "array",
+               "title": "The Uniaxialmaterials Schema",
+               "items": {
+                 "$id": "#/properties/Structural Analysis Model/properties/properties/properties/uniaxialMaterials/items",
+                 "type": "object",
+                 "title": "The Items Schema",
+                 "required": [
+                   "name",
+                   "type",
+                   "E",
+                   "fy",
+                   "b"
+                 ],
+                 "properties": {
+                   "name": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/uniaxialMaterials/items/properties/name",
+                     "type": "integer",
+                     "title": "The Name Schema",
+                     "default": 0,
+                     "examples": [
+                       1
+                     ]
+                   },
+                   "type": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/uniaxialMaterials/items/properties/type",
+                     "type": "string",
+                     "title": "The Type Schema",
+                     "default": "",
+                     "examples": [
+                       "Steel01"
+                     ],
+                     "pattern": "^(.*)$"
+                   },
+                   "E": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/uniaxialMaterials/items/properties/E",
+                     "type": "number",
+                     "title": "The E Schema",
+                     "default": 0,
+                     "examples": [
+                       29000
+                     ]
+                   },
+                   "fy": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/uniaxialMaterials/items/properties/fy",
+                     "type": "number",
+                     "title": "The Fy Schema",
+                     "default": 0.0,
+                     "examples": [
+                       73.5315446
+                     ]
+                   },
+                   "b": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/uniaxialMaterials/items/properties/b",
+                     "type": "number",
+                     "title": "The B Schema",
+                     "default": 0.0,
+                     "examples": [
+                       0.01
+                     ]
+                   }
+                 }
+               }
+             },
+             "ndMaterials": {
+               "$id": "#/properties/Structural Analysis Model/properties/properties/properties/ndMaterials",
+               "type": "array",
+               "title": "The Ndmaterials Schema",
+               "items": {
+                 "$id": "#/properties/Structural Analysis Model/properties/properties/properties/ndMaterials/items",
+                 "type": "object",
+                 "title": "The Items Schema",
+                 "required": [
+                   "name"
+                 ],
+                 "anyOf": [
+                  {
+                    "properties": {
+                      "type": { "enum": ["PlaneStressRebar"] }
+                    },
+                    "required": ["material",
+                      "angle",
+                      "name"],
+                    "$comment": "If the material type is PlaneStressRebar, material and angle are required."
+                  },
+                  {
+                      "properties": {
+                        "type": { "enum": ["Concrete"] }
+                      },
+                      "required": ["E", "fpc"],
+                      "$comment": "If the material type is Concrete, E and fpc are required."
+                    },
+                    {
+                      "properties": {
+                        "type": { "enum": ["LayeredConcrete"] }
+                      },
+                      "required": ["layers"],
+                      "$comment": "If the material type is LayeredConcrete, layers is required."
+                    },
+                  {
+                      "properties": {
+                        "type": { "enum": ["other material 1", "other materials 2"] }
+                      }
+                    }
+                ],
+                 "properties": {
+                   "material": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/ndMaterials/items/properties/material",
+                     "type": "integer",
+                     "title": "The Material Schema",
+                     "default": 0,
+                     "examples": [
+                       1
+                     ]
+                   },
+                   "angle": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/ndMaterials/items/properties/angle",
+                     "type": "number",
+                     "title": "The Angle Schema",
+                     "default": 0,
+                     "examples": [
+                       90
+                     ]
+                   },
+                   "name": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/ndMaterials/items/properties/name",
+                     "type": "integer",
+                     "title": "The Name Schema",
+                     "default": 0,
+                     "examples": [
+                       1
+                     ]
+                   },
+                   "type": {
+                     "$id": "#/properties/Structural Analysis Model/properties/properties/properties/ndMaterials/items/properties/type",
+                     "type": "string",
+                     "title": "The Type Schema",
+                     "default": "",
+                     "examples": [
+                       "PlaneStressRebar"
+                     ],
+                     "pattern": "^(.*)$"
+                   }
+                 }
+               }
+             },
+             "sections": {
+               "$id": "#/properties/Structural Analysis Model/properties/properties/properties/sections",
+               "type": "array",
+               "title": "The Sections Schema"
+             },
+             "crdTransformations": {
+               "$id": "#/properties/Structural Analysis Model/properties/properties/properties/crdTransformations",
+               "type": "array",
+               "title": "The Crdtransformations Schema"
+             }
+           }
+         },
+         "nodeMapping": {
+           "$id": "#/properties/Structural Analysis Model/properties/nodeMapping",
+           "type": "array",
+           "title": "The Nodemapping Schema",
+           "items": {
+             "$id": "#/properties/Structural Analysis Model/properties/nodeMapping/items",
+             "type": "object",
+             "title": "The Items Schema",
+             "required": [
+               "cline",
+               "floor",
+               "node"
+             ],
+             "properties": {
+               "cline": {
+                 "$id": "#/properties/Structural Analysis Model/properties/nodeMapping/items/properties/cline",
+                 "type": "integer",
+                 "title": "The Cline Schema",
+                 "default": 0,
+                 "examples": [
+                   1
+                 ]
+               },
+               "floor": {
+                 "$id": "#/properties/Structural Analysis Model/properties/nodeMapping/items/properties/floor",
+                 "type": "integer",
+                 "title": "The Floor Schema",
+                 "default": 0,
+                 "examples": [
+                   0
+                 ]
+               },
+               "node": {
+                 "$id": "#/properties/Structural Analysis Model/properties/nodeMapping/items/properties/node",
+                 "type": "integer",
+                 "title": "The Node Schema",
+                 "default": 0,
+                 "examples": [
+                   1
+                 ]
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+ }

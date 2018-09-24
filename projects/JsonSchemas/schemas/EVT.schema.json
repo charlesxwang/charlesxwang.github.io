@@ -1,0 +1,467 @@
+ {
+   "definitions": {},
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "$id": "http://example.com/root.json",
+   "type": "object",
+   "title": "The Root Schema",
+   "required": [
+     "Events"
+   ],
+   "properties": {
+     "Events": {
+       "$id": "#/properties/Events",
+       "type": "array",
+       "title": "The Events Schema",
+       "items": {
+         "$id": "#/properties/Events/items",
+         "type": "object",
+         "title": "The Items Schema",
+         "required": [
+           "name",
+           "type",
+           "units",
+           "timeSeries",
+           "boundaryConditions",
+           "loads"
+         ],
+         "properties": {
+           "name": {
+             "$id": "#/properties/Events/items/properties/name",
+             "type": "string",
+             "title": "The Name Schema",
+             "default": "",
+             "examples": [
+               "QuasiStaticCyclic"
+             ],
+             "pattern": "^(.*)$"
+           },
+           "type": {
+             "$id": "#/properties/Events/items/properties/type",
+             "type": "string",
+             "title": "The Type Schema",
+             "default": "",
+             "examples": [
+               "Cyclic"
+             ],
+             "pattern": "^(.*)$"
+           },
+           "units": {
+             "$id": "#/properties/Events/items/properties/units",
+             "type": "object",
+             "title": "The Units Schema",
+             "required": [
+               "force",
+               "length",
+               "time",
+               "temperature"
+             ],
+             "properties": {
+               "force": {
+                 "$id": "#/properties/Events/items/properties/units/properties/force",
+                 "type": "string",
+                 "title": "The Force Schema",
+                 "default": "",
+                 "examples": [
+                   "kip"
+                 ],
+                 "pattern": "^(.*)$"
+               },
+               "length": {
+                 "$id": "#/properties/Events/items/properties/units/properties/length",
+                 "type": "string",
+                 "title": "The Length Schema",
+                 "default": "",
+                 "examples": [
+                   "in"
+                 ],
+                 "pattern": "^(.*)$"
+               },
+               "time": {
+                 "$id": "#/properties/Events/items/properties/units/properties/time",
+                 "type": "string",
+                 "title": "The Time Schema",
+                 "default": "",
+                 "examples": [
+                   "sec"
+                 ],
+                 "pattern": "^(.*)$"
+               },
+               "temperature": {
+                 "$id": "#/properties/Events/items/properties/units/properties/temperature",
+                 "type": "string",
+                 "title": "The Temperature Schema",
+                 "default": "",
+                 "examples": [
+                   "F"
+                 ],
+                 "pattern": "^(.*)$"
+               }
+             }
+           },
+           "timeSeries": {
+             "$id": "#/properties/Events/items/properties/timeSeries",
+             "type": "array",
+             "title": "The Timeseries Schema",
+             "items": {
+               "$id": "#/properties/Events/items/properties/timeSeries/items",
+               "type": "object",
+               "title": "The Items Schema",
+               "required": [
+                 "name",
+                 "type",
+                 "factor"
+               ],
+               "properties": {
+                 "name": {
+                   "$id": "#/properties/Events/items/properties/timeSeries/items/properties/name",
+                   "type": "string",
+                   "title": "The Name Schema",
+                   "default": "",
+                   "examples": [
+                     "Null"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "type": {
+                   "$id": "#/properties/Events/items/properties/timeSeries/items/properties/type",
+                   "type": "string",
+                   "title": "The Type Schema",
+                   "default": "",
+                   "examples": [
+                     "Constant"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "factor": {
+                   "$id": "#/properties/Events/items/properties/timeSeries/items/properties/factor",
+                   "type": "integer",
+                   "title": "The Factor Schema",
+                   "default": 0,
+                   "examples": [
+                     0
+                   ]
+                 }
+               }
+             }
+           },
+           "boundaryConditions": {
+             "$id": "#/properties/Events/items/properties/boundaryConditions",
+             "type": "array",
+             "title": "The Boundaryconditions Schema",
+             "items": {
+               "$id": "#/properties/Events/items/properties/boundaryConditions/items",
+               "type": "object",
+               "title": "The Items Schema",
+               "required": [
+                 "name",
+                 "type",
+                 "timeSeries",
+                 "positions"
+               ],
+               "properties": {
+                 "name": {
+                   "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/name",
+                   "type": "string",
+                   "title": "The Name Schema",
+                   "default": "",
+                   "examples": [
+                     "FixTheBottom"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "type": {
+                   "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/type",
+                   "type": "string",
+                   "title": "The Type Schema",
+                   "default": "",
+                   "examples": [
+                     "LineDisplacement"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "timeSeries": {
+                   "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/timeSeries",
+                   "type": "string",
+                   "title": "The Timeseries Schema",
+                   "default": "",
+                   "examples": [
+                     "Null"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "positions": {
+                   "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions",
+                   "type": "array",
+                   "title": "The Positions Schema",
+                   "items": {
+                     "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items",
+                     "type": "object",
+                     "title": "The Items Schema",
+                     "required": [
+                       "startPoint",
+                       "endPoint",
+                       "dofs",
+                       "scales"
+                     ],
+                     "properties": {
+                       "startPoint": {
+                         "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/startPoint",
+                         "type": "object",
+                         "title": "The Startpoint Schema",
+                         "required": [
+                           "cline",
+                           "floor"
+                         ],
+                         "properties": {
+                           "cline": {
+                             "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/startPoint/properties/cline",
+                             "type": "string",
+                             "title": "The Cline Schema",
+                             "default": "",
+                             "examples": [
+                               "1"
+                             ],
+                             "pattern": "^(.*)$"
+                           },
+                           "floor": {
+                             "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/startPoint/properties/floor",
+                             "type": "string",
+                             "title": "The Floor Schema",
+                             "default": "",
+                             "examples": [
+                               "0"
+                             ],
+                             "pattern": "^(.*)$"
+                           }
+                         }
+                       },
+                       "endPoint": {
+                         "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/endPoint",
+                         "type": "object",
+                         "title": "The Endpoint Schema",
+                         "required": [
+                           "cline",
+                           "floor"
+                         ],
+                         "properties": {
+                           "cline": {
+                             "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/endPoint/properties/cline",
+                             "type": "string",
+                             "title": "The Cline Schema",
+                             "default": "",
+                             "examples": [
+                               "2"
+                             ],
+                             "pattern": "^(.*)$"
+                           },
+                           "floor": {
+                             "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/endPoint/properties/floor",
+                             "type": "string",
+                             "title": "The Floor Schema",
+                             "default": "",
+                             "examples": [
+                               "0"
+                             ],
+                             "pattern": "^(.*)$"
+                           }
+                         }
+                       },
+                       "dofs": {
+                         "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/dofs",
+                         "type": "array",
+                         "title": "The Dofs Schema",
+                         "items": {
+                           "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/dofs/items",
+                           "type": "string",
+                           "title": "The Items Schema",
+                           "default": "",
+                           "examples": [
+                             "1",
+                             "2"
+                           ],
+                           "pattern": "^(.*)$"
+                         }
+                       },
+                       "scales": {
+                         "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/scales",
+                         "type": "array",
+                         "title": "The Scales Schema",
+                         "items": {
+                           "$id": "#/properties/Events/items/properties/boundaryConditions/items/properties/positions/items/properties/scales/items",
+                           "type": "integer",
+                           "title": "The Items Schema",
+                           "default": 0,
+                           "examples": [
+                             0,
+                             0
+                           ]
+                         }
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           },
+           "loads": {
+             "$id": "#/properties/Events/items/properties/loads",
+             "type": "array",
+             "title": "The Loads Schema",
+             "items": {
+               "$id": "#/properties/Events/items/properties/loads/items",
+               "type": "object",
+               "title": "The Items Schema",
+               "required": [
+                 "name",
+                 "type",
+                 "timeSeries",
+                 "positions"
+               ],
+               "properties": {
+                 "name": {
+                   "$id": "#/properties/Events/items/properties/loads/items/properties/name",
+                   "type": "string",
+                   "title": "The Name Schema",
+                   "default": "",
+                   "examples": [
+                     "Vertical Loads on Top, do not include weight"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "type": {
+                   "$id": "#/properties/Events/items/properties/loads/items/properties/type",
+                   "type": "string",
+                   "title": "The Type Schema",
+                   "default": "",
+                   "examples": [
+                     "LineForce"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "timeSeries": {
+                   "$id": "#/properties/Events/items/properties/loads/items/properties/timeSeries",
+                   "type": "string",
+                   "title": "The Timeseries Schema",
+                   "default": "",
+                   "examples": [
+                     "Unity"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "positions": {
+                   "$id": "#/properties/Events/items/properties/loads/items/properties/positions",
+                   "type": "array",
+                   "title": "The Positions Schema",
+                   "items": {
+                     "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items",
+                     "type": "object",
+                     "title": "The Items Schema",
+                     "required": [
+                       "startPoint",
+                       "endPoint",
+                       "dofs",
+                       "scales"
+                     ],
+                     "properties": {
+                       "startPoint": {
+                         "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/startPoint",
+                         "type": "object",
+                         "title": "The Startpoint Schema",
+                         "required": [
+                           "cline",
+                           "floor"
+                         ],
+                         "properties": {
+                           "cline": {
+                             "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/startPoint/properties/cline",
+                             "type": "string",
+                             "title": "The Cline Schema",
+                             "default": "",
+                             "examples": [
+                               "1"
+                             ],
+                             "pattern": "^(.*)$"
+                           },
+                           "floor": {
+                             "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/startPoint/properties/floor",
+                             "type": "string",
+                             "title": "The Floor Schema",
+                             "default": "",
+                             "examples": [
+                               "3"
+                             ],
+                             "pattern": "^(.*)$"
+                           }
+                         }
+                       },
+                       "endPoint": {
+                         "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/endPoint",
+                         "type": "object",
+                         "title": "The Endpoint Schema",
+                         "required": [
+                           "cline",
+                           "floor"
+                         ],
+                         "properties": {
+                           "cline": {
+                             "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/endPoint/properties/cline",
+                             "type": "string",
+                             "title": "The Cline Schema",
+                             "default": "",
+                             "examples": [
+                               "2"
+                             ],
+                             "pattern": "^(.*)$"
+                           },
+                           "floor": {
+                             "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/endPoint/properties/floor",
+                             "type": "string",
+                             "title": "The Floor Schema",
+                             "default": "",
+                             "examples": [
+                               "3"
+                             ],
+                             "pattern": "^(.*)$"
+                           }
+                         }
+                       },
+                       "dofs": {
+                         "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/dofs",
+                         "type": "array",
+                         "title": "The Dofs Schema",
+                         "items": {
+                           "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/dofs/items",
+                           "type": "string",
+                           "title": "The Items Schema",
+                           "default": "",
+                           "examples": [
+                             "2"
+                           ],
+                           "pattern": "^(.*)$"
+                         }
+                       },
+                       "scales": {
+                         "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/scales",
+                         "type": "array",
+                         "title": "The Scales Schema",
+                         "items": {
+                           "$id": "#/properties/Events/items/properties/loads/items/properties/positions/items/properties/scales/items",
+                           "type": "integer",
+                           "title": "The Items Schema",
+                           "default": 0,
+                           "examples": [
+                             -103
+                           ]
+                         }
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+ }
